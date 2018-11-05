@@ -48,3 +48,6 @@ I am not sure yet which tool/platform to use for this matters as I am not very
 familiart with OST. Also, it is not a mandatory task, so I will not waste all 
 my time here. Something simple and effective should work.
 
+## Decision 04
+ * Add vagrant ports to open connections with the guest. Added "forwarded
+port" mapping 80:8080.
