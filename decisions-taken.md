@@ -54,7 +54,9 @@ port" mapping 80:8080.
 
 ## Decision 05
  * Open the necessary ports in vagrant to allow a VM on the same network to 
-access the API endpoints showed by issuing `$ openstack endpoint list --interface
-public`. I could simply change NAT to public_network in vagrant but this
-solution is not very secure, as anyone on the network would have access to
-the environment.
+access the API endpoints showed by issuing `$ openstack endpoint list 
+--interface public`. I could simply change NAT to public_network in vagrant 
+but that seems less secure. I cannot spend much more time here. Truth is,
+I am not sure which way is the best, so I will just go for the way it works.
+Also, if I am not wrong, a VM on the same subnet will not be able to access
+any port in my Windows laptop unless I open the ports in the firewall.
