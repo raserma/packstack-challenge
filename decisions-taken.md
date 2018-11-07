@@ -60,3 +60,12 @@ but that seems less secure. I cannot spend much more time here. Truth is,
 I am not sure which way is the best, so I will just go for the way it works.
 Also, if I am not wrong, a VM on the same subnet will not be able to access
 any port in my Windows laptop unless I open the ports in the firewall.
+
+## Decision 06
+ * Use Ansible instead of AWX: considering my experience with AWX and the
+tasks that need to be done, this project fits quite well with AWX. Specially
+the dynamic inventory querying information from Openstack environment. 
+However, I decided to execute them on Ansible standalone as I am not 100% 
+certain how to deploy correctly AWX on Packstack and time is not in my favor.
+On the other side, I will create the role and playbooks taking into account
+that could be migrated to AWX for a future project, if needed.
