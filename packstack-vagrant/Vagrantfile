@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.box = "centos/7"
 
-  config.vm.synced_folder ".", "/vagrant", disabled: true
+  config.vm.synced_folder "../", "/vagrant"
 
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 4
@@ -30,6 +30,19 @@ Vagrant.configure(2) do |config|
     sudo yum -y install centos-release-openstack-rocky
     sudo yum -y install openstack-packstack
     sudo yum -y install e2fsprogs
+
+    # Install ansible
+    sudo yum -y install ansible
+    # Install shade to execute Ansible with OST modules
+    sudo yum install epel-release python-devel openssl-devel
+    sudo yum groupinstall "Development Tools"
+    sudo yum -y update
+    sudo yum -y install python-pip
+    sudo pip install --upgrade pip
+    sudo pip install shade
+
+    # Install tree/vim
+    sudo yum -y install tree vim
 
     sudo systemctl disable NetworkManager
     sudo systemctl stop NetworkManager
