@@ -1,6 +1,8 @@
 # Pre-commit hook
 This pre-commit hook will be triggered for every `git commit` issued.
 
+Source can be found [here](https://gist.github.com/wookietreiber/8e92f6db1bc632d501a9fa0bafbcb391)
+
 It checks that diff files that contain the extension ".ya?ml" under
 the folder `ansible/` are Lint compliant using `ansible-lint` tool.
 

@@ -8,6 +8,9 @@
 # To enable this hook, rename this file to "pre-commit".
 #!/bin/bash
 
+# Source code for this pre-commit can be found at:
+# https://gist.github.com/wookietreiber/8e92f6db1bc632d501a9fa0bafbcb391
+
 if git rev-parse --verify HEAD &> /dev/null ; then
 	against=HEAD
 else
