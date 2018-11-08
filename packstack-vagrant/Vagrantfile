@@ -7,7 +7,7 @@ Vagrant.configure(2) do |config|
 
   config.vm.box = "centos/7"
 
-  config.vm.synced_folder "../", "/vagrant"
+  config.vm.synced_folder "../ansible/", "/vagrant"
 
   config.vm.provider "virtualbox" do |vb|
     vb.cpus = 4
@@ -21,6 +21,9 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 8774, host: 8774
   config.vm.network "forwarded_port", guest: 9292, host: 9292
   config.vm.network "forwarded_port", guest: 9696, host: 9696
+
+  # Port for checking console of Instances with VNC
+  config.vm.network "forwarded_port", guest: 6080, host: 6080
   config.vm.provision "file", source: "answers.txt", destination: "answers.txt"
   config.vm.provision "shell", privileged: false, inline: <<-SHELL
     ssh-keygen -t rsa -N '' -f ~/.ssh/id_rsa -q
@@ -34,8 +37,8 @@ Vagrant.configure(2) do |config|
     # Install ansible
     sudo yum -y install ansible
     # Install shade to execute Ansible with OST modules
-    sudo yum install epel-release python-devel openssl-devel
-    sudo yum groupinstall "Development Tools"
+    sudo yum install -y epel-release python-devel openssl-devel
+    sudo yum groupinstall -y "Development Tools"
     sudo yum -y update
     sudo yum -y install python-pip
     sudo pip install --upgrade pip

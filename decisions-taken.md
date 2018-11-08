@@ -98,3 +98,14 @@ call the tasks separately. Probably not the best decision ever.
  Tower but I have never used Openstack one. I know there is an official dynamic
  inventory and I will check that one as I have barely 3 hours left to finish
  last task.
+
+## Decision 13
+ * Query instance information: I am going to use `openstack_inventory.py`
+ official script for such a task. I know the dynamic inventory is meant to
+ be built manually but I do not know the `openstack sdk` library in python good
+ enough.
+
+## Decision 14
+ * Group VMs based on metadata: I understand the purpose and I have an idea of
+ how this would be done, but I cannot finish it today. I rather get some sleep
+ and be ready and fresh tomorrow, than start coding the answer right now.
