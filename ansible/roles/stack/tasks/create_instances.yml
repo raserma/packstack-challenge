@@ -17,12 +17,7 @@
   register: "os_hosts"
 
 
-- name: debug
-  debug:
-    msg: "{{ os_hosts.results }}"
+  #- name: debug
+  #debug:
+  #  msg: "{{ os_hosts.results }}"
 
-#  add_host:
-#    name: "{{ item['openstack']['human_id'] }}"
-#    groups: "{{ item['item']['meta']['group'] }}"
-#    ansible_host: "{{ item.openstack.accessIPv4 }}"
-#  with_items: "{{ os_hosts.results }}"
