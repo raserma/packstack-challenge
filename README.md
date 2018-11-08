@@ -23,6 +23,8 @@ Let's start it.
 
 ## Simulate environment
 If you want to set up my own environment, you can do so by:
+
+### Task 1, 2 and 3
    `$ git clone https://github.com/raserma/packstack-challenge.git`
 
    `$ cd packstack-challenge/packstack-vagrant`
@@ -33,6 +35,7 @@ If you want to set up my own environment, you can do so by:
 
    `$ cd /vagrant/ `
    
+### Task 4
 Download openrc.sh file and:
 
    `$ chmod +x admin-openrc.sh && source admin-openrc.sh` 
@@ -41,6 +44,7 @@ Download openrc.sh file and:
 
 will execute playbook and provision the stack.
 
+### Task 5
 In order to query VM specs, you can use `openstack_inventory.py`:
 
 List all the hosts with all metadata:
@@ -50,6 +54,11 @@ List all the hosts with all metadata:
 Or list all the data for a specific host:
 
     `$ ./openstack_inventory.py --host <hostname>`
+
+## How to orchestrate creation of VMs
+You can define how many VMs you want and what resources they have by specifying
+everything on file `ansible/vars.yml`. It is not the most effective way of
+doing it, as you need to repeat the data many times. 
 
 ## Lessons learned
 A lot of lessons learned with this simple exercise. From my local development
