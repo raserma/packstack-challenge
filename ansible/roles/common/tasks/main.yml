@@ -1,0 +1,6 @@
+---
+- name: Create SSH key pair
+  os_keypair:
+    state: present
+    name: SSH-Key
+    public_key_file: /home/vagrant/.ssh/id_rsa.pub

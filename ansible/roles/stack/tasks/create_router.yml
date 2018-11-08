@@ -1,0 +1,8 @@
+---
+- name: Create a router
+  os_router:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    network: "{{ item.network }}"
+    interfaces: "{{ item.interfaces | default(omit) }}"
+  with_items: "{{ routers }}"

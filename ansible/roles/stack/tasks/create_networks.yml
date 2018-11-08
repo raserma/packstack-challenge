@@ -1,0 +1,9 @@
+---
+- name: Create a network with Neutron
+  os_network:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+    shared: "{{ item.shared | default(omit) }}"
+    external: "{{ item.external | default(omit) }}"
+    project: "{{ item.project | default(omit) }}"
+  with_items: "{{ networks }}"

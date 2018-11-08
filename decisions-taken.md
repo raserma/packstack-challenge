@@ -69,3 +69,32 @@ However, I decided to execute them on Ansible standalone as I am not 100%
 certain how to deploy correctly AWX on Packstack and time is not in my favor.
 On the other side, I will create the role and playbooks taking into account
 that could be migrated to AWX for a future project, if needed.
+
+## Decision 07
+ * using one role instead of modularity: I decided to use one role instead
+ of many because the exercise said so. However, the more I am developing,
+ the more I regret not adding more granularity to the roles.
+
+## Decision 08
+ * import_role and from_tasks: because I was using one only role, and I was
+never a friend of tags, I decided to use latest feature `import_role` and 
+call the tasks separately. Probably not the best decision ever.
+
+## Decision 09
+ * vars_files to include vars: because the requirements said to use a YML file,
+ I am using vars_files for that. 
+
+## Decision 10
+ * I am aware that I am doing things wrong. It is too late to come back. If
+ I was working without so much time pressure, I would change mostly everything:
+ how to deal with roles, how to deal with vars, the main playbook, etc.
+
+## Decision 11
+ * I cannot SSH/login into the VMs from packstack. I have tried everything, I am not sure what I am missing. I will keep going and focus on the last task
+ as I cannot get stuck longer here. Tic tac.
+
+## Decision 12
+ * dynamic inventory: I have worked with VMware dynamic inventory and Ansible
+ Tower but I have never used Openstack one. I know there is an official dynamic
+ inventory and I will check that one as I have barely 3 hours left to finish
+ last task.

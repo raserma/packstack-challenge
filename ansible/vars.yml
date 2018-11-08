@@ -1,0 +1,51 @@
+---
+# vars file for stack
+flavors:
+  - name: flavor-costum
+    state: present
+    ram: 512
+    disk: 1
+    vcpus: 1
+networks:
+  - name: external
+    state: present
+    external: yes
+    subnets:
+      - name: sub-external
+        cidr: 192.168.1.0/24
+        gateway_ip: 192.168.1.1
+        enable_dhcp: no
+        allocation_pool_start: 192.168.1.2
+        allocation_pool_end: 192.168.1.254
+  - name: internal
+    state: present
+    subnets:
+      - name: sub-internal
+        cidr: 10.0.0.0/24
+        gateway_ip: 10.0.0.1
+        state: present
+routers:
+  - name: router-1
+    state: present
+    network: external
+    interfaces:
+      - sub-internal
+servers:
+  - name: db1
+    state: present
+    image: cirros
+    flavor: m1.tiny
+    security_groups: default
+    key: SSH-Key
+    network: internal
+    meta:
+      group: dbs
+  - name: webserver
+    image: cirros
+    state: present
+    flavor: m1.tiny
+    security_groups: default
+    key: SSH-Key
+    network: internal
+    meta:
+      group: appservers

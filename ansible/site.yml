@@ -1,0 +1,34 @@
+---
+- name: Common tasks
+  hosts: localhost
+  roles:
+    - { role: common }
+
+- hosts: localhost
+  vars_files:
+    - vars.yml
+  tasks:
+  - name: create flavor
+    import_role:
+      name: stack
+      tasks_from: create_flavors.yml
+
+  - name: create network
+    import_role:
+      name: stack
+      tasks_from: create_networks.yml
+
+  - name: create subnets
+    import_role:
+      name: stack
+      tasks_from: create_subnets.yml
+
+  - name: create router
+    import_role:
+      name: stack
+      tasks_from: create_router.yml
+
+  - name: create instances
+    import_role:
+      name: stack
+      tasks_from: create_instances.yml

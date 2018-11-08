@@ -10,3 +10,10 @@ In a summary, the challenge consists of four main tasks:
  1. Create a dynamic Ansible inventory.
  
 Let's start it.
+
+## Status
+ * Task 1: done.
+ * Task 2: done.
+ * Task 3: done
+ * Task 4: done (**but there is no connectivity with the instances**)
+ * Task 5: in progress.
